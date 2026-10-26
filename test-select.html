@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>آزمایش انتخاب فایل</title>
+</head>
+<body>
+  <h2>آزمایش انتخاب فایل از گوشی</h2>
+  <p>فایل‌هایی را که می‌خواهی آزمایش کنی انتخاب کن.</p>
+
+  <input type="file" id="files" multiple>
+
+  <p id="result">هنوز فایلی انتخاب نشده است.</p>
+
+  <script>
+    document.getElementById("files").addEventListener("change", function () {
+      const files = this.files;
+      document.getElementById("result").textContent =
+        files.length
+          ? "تعداد فایل‌های انتخاب‌شده: " + files.length
+          : "هنوز فایلی انتخاب نشده است.";
+    });
+  </script>
+</body>
+</html>
